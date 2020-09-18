@@ -1,7 +1,10 @@
-FROM node:14.11.0
+FROM node:14.11.0-alpine3.12
+
+
+
+RUN ["/bin/sh", "-c", "apk update && apk add bash"]
 
 USER node
-
 
 RUN ["/bin/bash", "-c", "/bin/mkdir /home/node/.npm-global"]
 
